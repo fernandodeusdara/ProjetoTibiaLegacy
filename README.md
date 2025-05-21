@@ -1,1 +1,1 @@
-# ProjetoTibiaLegacy
+Este projeto é para fins de estudo, então existem muitos comentários, tanto para aprendizagem quanto alguns pontos a ser melhorados. Para rodar o projeto, basta iniciar, é um WebSite que traz informações do jogo Tibia, consumindo Apis do próprio tibia. O projeto está em construção, portanto, faltam muitos detalhes ainda para serem desenvolvidos e melhorados.
