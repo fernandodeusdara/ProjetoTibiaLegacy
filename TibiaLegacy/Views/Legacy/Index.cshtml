@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        margin: 0; /* Remove margens padrão */
+        padding: 0; /* Remove espaçamento padrão */
+        height: 100vh; /* Define altura igual à altura da tela */
+        background-image: url('/images/thais18.jpg');
+        background-size: cover; /* Faz a imagem cobrir toda a tela */
+        background-repeat: no-repeat; /* Impede a repetição da imagem */
+    }
+
+    .welcome h1{
+        color: black;
+        text-align: center;
+        padding-top: 8%; /* Centraliza o texto verticalmente */
+        font-family: Verdana, Arial, Times New Roman, sans-serif;
+        font-weight: bold;
+        font-size: 70px;
+    }
+
+    .cavaleiro {
+        color: black;
+        text-align: center;
+        padding-top: 4%; /* Centraliza o texto verticalmente */
+        font-family: Verdana, Arial, Times New Roman, sans-serif;
+        font-weight: bold;
+    }
+
+    .criaturaBoostada {
+        position: fixed;
+        top: 100px; /* Ajuste conforme necessário */
+        right: 42px; /* Ajuste conforme necessário */
+    }
+
+    .bossBoostado {
+        position: fixed;
+        top: 100px; /* Ajuste conforme necessário */
+        left: 42px; /* Ajuste conforme necessário */
+    }
+
+    .nomeCriatura {
+        text-align: center;
+        margin-bottom: 2px; /* Reduz o espaço abaixo do nome */
+        font-weight: bold; /* Destaca o nome */
+    }
+
+    .nomeBoss {
+        text-align: center;
+        margin-bottom: 2px; /* Reduz o espaço abaixo do nome */
+        font-weight: bold; /* Destaca o nome */
+    }
+
+    .boostadoImage {
+        display: inline-block;
+        vertical-align: middle; /* Alinha melhor a imagem ao nome */
+    }
+
+
+</style>
+
+<div class="welcome">
+    <h1 class="display-4">Welcome to Tibia Legacy</h1>
+</div>
+
+<div class="cavaleiro">
+    <h2>Make yourself a specialist Boss Hunter!</h2>
+    <img src="~/images/cavaleiroreggae2.png" width=300 height=240>
+    <img src="~/images/SauronGreenleaf2.png" width=350 height=290>
+</div>
+
+<div class="criaturaBoostada">
+    <h3 style="font-family: Helvetica, arial, sans-serif">Criatura Boostada</h3>
+    <p class="nomeCriatura" style="font-family: Helvetica, arial, sans-serif"><span id="criaturaBoostada"></span></p>
+    <div class="boostadoImage" id="boostadoImage"></div> <!-- Aqui será inserida a imagem via JavaScript -->
+</div>
+
+<div class="bossBoostado">
+    <h3 style="font-family: Helvetica, arial, sans-serif">Boss Boostado</h3>
+    <p class="nomeBoss" style="font-family: Helvetica, arial, sans-serif"><span id="bossBoostado"></span></p>
+    <div class="bossBoostadoImage" id="bossBoostadoImage"></div> <!-- Aqui será inserida a imagem via JavaScript -->
+</div>
+
+@section Scripts {
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+    <script src="~/js/Legacy.js"></script>
+
+}

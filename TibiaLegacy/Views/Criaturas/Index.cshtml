@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Criaturas";
+}
+
+<style>
+    body {
+        margin: 0; /* Remove margens padrão */
+        padding: 0; /* Remove espaçamento padrão */
+        height: 100vh; /* Define altura igual à altura da tela */
+        background-image: url('/images/thais18.jpg');
+        background-size: cover; /* Faz a imagem cobrir toda a tela */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Impede a repetição da imagem */
+    }
+
+    .text-center {
+        color: black;
+        text-align: center;
+        padding-top: 20%; /* Centraliza o texto verticalmente */
+    }
+</style>
+
+@* Table que irá gerar a jtable no arquivo de Javascript, a configuração de colunas e linhas é feita no arquivo JavaScript *@
+<table id="criaturas" class="display">
+    <thead>
+        <tr></tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section Scripts {
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+    <script src="/js/Criaturas.js"></script>
+
+}

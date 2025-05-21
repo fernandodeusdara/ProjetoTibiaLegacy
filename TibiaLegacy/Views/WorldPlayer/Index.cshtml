@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Mundos";
+}
+
+<style>
+    body {
+        margin: 0; /* Remove margens padrão */
+        padding: 0; /* Remove espaçamento padrão */
+        height: 100vh; /* Define altura igual à altura da tela */
+        background-image: url('/images/thais18.jpg');
+        background-size: cover; /* Faz a imagem cobrir toda a tela */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Impede a repetição da imagem */
+    }
+
+    .text-center {
+        color: white;
+        text-align: center;
+        padding-top: 20%; /* Centraliza o texto verticalmente */
+    }
+
+    .mundosOnlineTable {
+        width: 40%; /* Tabela ocupa 50% da largura da tela */
+        float: left; /* Faz a tabela flutuar para a esquerda */
+        margin-top: 20px; /* Se precisar de um espaçamento acima */
+        font-family: Helvetica, arial, sans-serif;
+        color: black;
+    }
+
+    .findCharacter {
+        width: 40%; /* Tabela ocupa 50% da largura da tela */
+        float: right; /* Faz a tabela flutuar para a esquerda */
+        margin-top: 30px; /* Se precisar de um espaçamento acima */
+        font-family: Helvetica, arial, sans-serif;
+        color: black;
+    }
+
+    .nameCharacter {
+        background-color: transparent; /* Cor de fundo do campo */
+        border-block-color: black; /* Cor das bordas do campo */
+    }
+
+    .searchCharacter {
+        background-color: transparent;
+        border-block-color: black;
+    }
+
+    .characterTable {
+        margin-top: 25px; /* Se precisar de um espaçamento acima */
+    }
+
+        .characterTable tr {
+            height: 40px;
+        }
+
+        .characterTable td {
+            padding-left: 20px; /* Se precisar de um espaçamento à esquerda */
+        }
+</style>
+
+@* Table que irá gerar a jtable no arquivo de Javascript *@
+<div class="mundosOnlineTable">
+    <table id="mundosOnline" class="display">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+@* div que agrega a segunda parte (direita) da tela, com as informações do char *@
+<div class="findCharacter">
+    <input id="nameCharacter" class="nameCharacter" type="text" placeholder="Search a character" style="padding: 5px; flex: 1;">  @* Campo de preenchimento para pesquisa *@
+    <button id="searchCharacter" class="searchCharacter" style="padding: 5px 10px;">Search</button> @* Botão que aciona a pesquisa *@
+
+    <table id="characterTable" class="characterTable"> @* Table que irá gerar a jtable no arquivo de Javascript, mas nesse caso o cabeçalho estará na primeira coluna, e os valores de cada campo na segunda coluna, a variável do valor será tratada via JavaScript *@
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td id="nameValue"></td>
+            </tr>
+            <tr>
+                <th>Guild</th>
+                <td id="guildValue"></td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td id="titleValue"></td>
+            </tr>
+            <tr>
+                <th>Vocation</th>
+                <td id="vocationValue"></td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td id="levelValue"></td>
+            </tr>
+            <tr>
+                <th>World</th>
+                <td id="worldValue"></td>
+            </tr>
+            <tr>
+                <th>Last Login</th>
+                <td id="loginValue"></td>
+            </tr>
+            <tr>
+                <th>Account Status</th>
+                <td id="accValue"></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td id="statusValue"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mundoModal" tabindex="-1" aria-labelledby="mundoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mundoModalLabel">World Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> @* Botão de fechar "X" *@
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>World:</strong> <span id="mundoNome"></span></p>
+                <p><strong>Players Online:</strong></p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Vocation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mundoPlayers"></tbody> <!-- Aqui os jogadores serão inseridos -->
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn fechar" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+    <script src="~/js/WorldPlayer.js"></script>
+
+}
