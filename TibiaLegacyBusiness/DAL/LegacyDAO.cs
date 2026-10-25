@@ -7,8 +7,8 @@ namespace TibiaLegacyBusiness.DAL
 {
     public class LegacyDAO
     {
-        public const string API_CREATURES = "https://api.tibiadata.com/v4/creatures";
-        public const string API_BOSS_BOOSTADO = "https://api.tibiadata.com/v4/boostablebosses";
+        public const string API_CREATURES = "https://api.tibiadata.com/v5/creatures";
+        public const string API_BOSS_BOOSTADO = "https://api.tibiadata.com/v5/boostablebosses";
       
         public async Task<Boostado> GetCriaturaBoostada()
         {

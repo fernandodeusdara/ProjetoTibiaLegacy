@@ -6,9 +6,9 @@ namespace TibiaLegacyBusiness.DAL
 {
     public class WorldPlayerDAO
     {
-        public const string API_WORLDS = "https://api.tibiadata.com/v4/worlds";
-        public const string API_PLAYERSONLINE = "https://api.tibiadata.com/v4/world/";
-        public const string API_CHARACTER = "https://api.tibiadata.com/v4/character/";
+        public const string API_WORLDS = "https://api.tibiadata.com/v5/worlds";
+        public const string API_PLAYERSONLINE = "https://api.tibiadata.com/v5/world/";
+        public const string API_CHARACTER = "https://api.tibiadata.com/v5/character/";
 
         public async Task<List<RegularWorlds>> GetMundos()
         {

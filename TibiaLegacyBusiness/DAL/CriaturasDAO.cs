@@ -7,8 +7,8 @@ namespace TibiaLegacyBusiness.DAL
 {
     public class CriaturasDAO
     {
-        public const string API_CREATURES = "https://api.tibiadata.com/v4/creatures";
-        public const string API_BOSS_BOOSTADO = "https://api.tibiadata.com/v4/boostablebosses";
+        public const string API_CREATURES = "https://api.tibiadata.com/v5/creatures";
+        public const string API_BOSS_BOOSTADO = "https://api.tibiadata.com/v5/boostablebosses";
 
         // Esse método consome a mesma API que o próximo, talvez seja possível usar apenas um e tratar o retorno no service de acordo com o que é necessário.
         public async Task<List<CreatureList>> GetCriaturas()
